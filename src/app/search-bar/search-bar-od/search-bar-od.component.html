@@ -1,0 +1,23 @@
+<form [formGroup]="ngForm" class="row">
+  <div class="col">
+    <div class='textinput'>
+      <label class='label'>Origen</label>
+      <input type='text' formControlName="source" class='input' (keyup)="filterAirports($event.target.value)" placeholder="Ciudad o Aeropuerto" required>
+      <span class='linea'></span>
+      <ul class="list-group" *ngFor="let item of filter">
+        <li class="list-group-item" (click)="selectedItem(item)">{{item.code}} - {{item.name}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col">
+    <div class='textinput'>
+      <label class='label'>Destino</label>
+      <input type='text' formControlName="destination" class='input' (keyup)="filterAirportsDestinations($event.target.value)" placeholder="Ciudad o Aeropuerto" required>
+      <span class='linea'></span>
+      <ul class="list-group" *ngFor="let item of filterDestinations">
+        <li class="list-group-item" (click)="selectedItemDestination(item)">{{item.code}} - {{item.name}}</li>
+      </ul>
+    </div>
+  </div>
+  
+</form>

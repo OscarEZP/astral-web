@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+<app-search-bar [searchBarConfig]="config"></app-search-bar>
+<div class="col-12">
+  <hot-table [colHeaders]="true"
+  [rowHeaders]="false" [data]="data" [columns]="columns"></hot-table>
+</div>
+
+<button (click)="sendData()">getData</button>

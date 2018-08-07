@@ -1,0 +1,262 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap-grid";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+@import '~handsontable/dist/handsontable.full.css';
+@import 'assets/latamSans.css';
+@import 'assets/animate.css';
+
+/* ----------------------- Base*/
+html{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  background-color: #f8f8f8;
+  color: #1B0088;
+  font-family: "LatamSansRegular", sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  height: 100%;
+  line-height: 1.5em;
+  margin: 0;
+  min-height: 100%;
+  overflow: hidden;
+  padding: 0;
+}
+::-webkit-input-placeholder {color: #989AA1;}
+::-moz-placeholder {/* Firefox 18- */color: #989AA1;}
+::-moz-placeholder {/* Firefox 19+ */color: #989AA1;}
+::-ms-input-placeholder {color: #989AA1;}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block;
+}
+a{text-decoration: none;}
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #444444;
+}
+h4, .h4, h5, .h5, h6, .h6 {
+  margin-top: 11.5px;
+  margin-bottom: 11.5px;
+}
+h6, .h6 {
+  font-size: 1em;
+}
+button{
+  outline: none;
+}
+
+/* --------------------- Header*/
+.header {
+  -ms-flex-align: center;
+  -ms-flex-pack: justify;
+  -webkit-box-align: center;
+  -webkit-box-pack: justify;
+  align-items: center;
+  background-color: #1B0088;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  font-family: 'LatamSansRegular';
+  font-size: 16px;
+  height: 52px;
+  justify-content: space-between;
+  left: 0;
+  padding: 0 1em;
+  right: 0;
+  transition: left 0.3s ease;
+  z-index: 10;
+}
+.shadow {
+  -webkit-box-shadow: 2px 6px 26px -7px rgba(0,0,0,0.38);
+  -moz-box-shadow: 2px 6px 26px -7px rgba(0,0,0,0.38);
+  box-shadow: 2px 6px 26px -7px rgba(0,0,0,0.38);
+  /*opacity: 0.95;*/
+}
+.fixed {
+  // position: fixed;
+  width: 100%;
+  top: 0;
+}
+.center {
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.header__logo {
+  color: transparent;
+  vertical-align: top;
+}
+.header__titulo {
+  color: #FFFFFF;
+  font-family: 'LatamSansRegular';
+  font-size: 1.6em;
+  margin: 0;
+  display: none;
+}
+.nav-menu{
+  margin: 0;       
+}
+.nav-link > span{
+  font-family: 'LatamSansRegular';
+  font-size: 1.2em;
+}
+a.nav-link {
+  background-color: #F53859;
+  padding: .8em 2em;
+  text-decoration: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 140px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+/* --------------------- Main*/
+.section__main {
+  // margin-top: 52px;
+  background-color: #FFFFFF;
+  height: 90px;
+  padding-top: 1em;
+  box-shadow: 0 2px 4px 0 rgba(224, 224, 224, 0.5);
+}
+.textinput {
+  position: relative;
+  /*max-width: 220px;*/
+  width: 100%;
+  display: inline-block;
+  margin: 10px;
+}
+.input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  margin-top: 20px;
+  width: 100%;
+  color: #1B0088;
+  -webkit-tap-highlight-color: transparent;
+  border-bottom: solid 1px #929292;
+  padding: 1px 10px;
+}
+.label {
+  color: #1B0088;
+  font-family: "LatamSansBold";
+  font-size: 12px;
+  font-weight: 600;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  transition: 0.2s cubic-bezier(0, 0, 0.3, 1);
+  padding-left: 10px;
+  user-select: none;
+}
+.linea {
+  height: 1px;
+  background-color: #1B0088;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  transition: 0.2s cubic-bezier(0, 0, 0.3, 1);
+}
+.input:focus ~ .linea, 
+.input:valid ~ .linea {
+  width: 100%;
+}
+.input:focus ~ .label, 
+.input:valid ~ .label {
+  font-size: 12px;
+  color: #1B0088;
+  top: 0;
+}
+.textinput > i{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  cursor: pointer;
+}
+.btn-latam-search{
+  background-color: #EC254F;
+  border-radius: 100%;
+  margin-top: .5em;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), -1px 1px 9px 0 rgba(0, 0, 0, 0.12);
+}
+.btn-latam-search > i{
+  color: #FFFFFF;
+  font-size: 1.2em;
+}
+.mar-r-0{margin-right: 0;}
+.mar-l-0{margin-left: 0;}
+
+/* --------------------- Footer*/
+footer.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #1B0088;
+  color: #FFFFFF;
+  padding: 10px;
+  margin: 0;
+  border-top: 1px solid #EC254F;
+}
+
+.bg {
+  width: 46px;
+  height: 46px;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.24), 0 0 5px 0 rgba(0, 0, 0, 0.12);
+  background-color: #ec254f;
+  border-style: solid;
+  border-width: 0.5px;
+  border-image-source: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06) 20%, rgba(255, 255, 255, 0));
+  border-image-slice: 1;
+  border-radius: 50%;
+}
+
+// table thead th {
+//   background-color: #1B0088 !important;
+//   color: white !important;
+// }
+
+.bs-datepicker-head {
+  background-color: white !important;
+  text-align: center;
+}
+
+.bs-datepicker-head button {
+  font-weight: bold;
+  color: #1B0088 !important;
+}
+
+.bs-datepicker-body {
+  padding: 0;
+  border: 0;
+}
+
+.bs-datepicker-body table thead {
+  background-color: white !important;
+  color: #444444;
+}
+
+.theme-green .bs-datepicker-body table td span.selected,
+.theme-green .bs-datepicker-body table td.selected span,
+.theme-green .bs-datepicker-body table td span[class*="select-"]:after,
+.theme-green .bs-datepicker-body table td[class*="select-"] span:after {
+  background-color: #1B0088;
+}
+

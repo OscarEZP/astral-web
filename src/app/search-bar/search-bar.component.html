@@ -1,0 +1,23 @@
+<section class="section__main center">
+  <div class="container">
+    <form [formGroup]="ngForm" class="row justify-content-center" (ngSubmit)="submit(ngForm.value)">
+      <!-- <app-search-bar-od *ngIf="searchBarConfig.components.source_destination"></app-search-bar-od> -->
+      <div class="col ml-3">
+        <div class="textinput">
+          <label class='label'>Fecha de vuelo inicio</label>
+          <app-datepicker formControlName="date_init" [placeholder]="searchBarConfig.components.source_destination.placeholder_source"></app-datepicker>
+        </div>
+        <span class='linea'></span>
+      </div>
+      <div class="col ml-3">
+        <div class="textinput">
+          <label class='label'>Fecha de vuelo final</label>
+          <app-datepicker formControlName="date_end" [placeholder]="searchBarConfig.components.source_destination.placeholder_destination"></app-datepicker>
+        </div>
+        <span class='linea'></span>
+      </div>
+      
+      <button class="btn bg mt-2 offset-1" type="submit"></button>
+    </form>
+  </div>
+</section>
